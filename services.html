@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services - GeeGee's Dog Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+          rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+  
+  <style>
+    body {font-family: Arial, sans-serif;}
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      padding-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .body-section {
+      padding: 50px 0;
+    }
+
+    .s-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch; 
+      height: 500px;
+    }
+    
+    .s-col {
+      flex: 1;
+      min-width: 50%;
+      display: flex;
+    }
+    
+    .s-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .s-txt {
+      background-color: black;
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .s-txt h3 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .s-txt p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.png" alt="Logo" width="50" height="50">
+        GeeGee's Dog Salon
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="employees.html">Groomers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary ms-2" href="book.html">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Our Services</h1>
+
+  <section class="body-section">
+    <div class="container-fluid">
+      
+      <!-- Bath and brush -->
+      <div class="row g-0 s-row">
+        <div class="col-md-6 s-col">
+          <div class="s-txt">
+            <h3>Bath and Brush</h3>
+            <p>Bath, blow-dry, and brushing to remove tangles and matting.</p>
+            <p><strong>Prices</strong></p>
+            <p>Small breed: $25</p>
+            <p>Medium breed: $45</p>
+            <p>Large breed: $60</p>
+          </div>
+        </div>
+        <div class="col-md-6 s-col">
+          <img src="Images/wash dog.jpg" alt="Bath and Brush" class="s-img">
+        </div>
+      </div>
+
+      <!-- Bath and tidy -->
+      <div class="row g-0 s-row flex-md-row-reverse">
+        <div class="col-md-6 s-col">
+          <div class="s-txt">
+            <h3>Bath and Tidy</h3>
+            <p>Includes all Bath and Brush services plus trimming of the face, paws, and sanitary areas.</p>
+            <p><strong>Prices</strong></p>
+            <p>Small breed: $45</p>
+            <p>Medium breed: $65</p>
+            <p>Large breed: $80</p>
+          </div>
+        </div>
+        <div class="col-md-6 s-col">
+          <img src="Images/trim dog.jpg" alt="Bath and Tidy" class="s-img">
+        </div>
+      </div>
+
+      <!-- Full groom -->
+      <div class="row g-0 s-row">
+        <div class="col-md-6 s-col">
+          <div class="s-txt">
+            <h3>Full Groom</h3>
+            <p>Comprehensive package including haircut, bath, blow-dry, brushing, nail trim, and ear cleaning.</p>
+            <p><strong>Prices</strong></p>
+            <p>Small breed: $60</p>
+            <p>Medium breed: $80</p>
+            <p>Large breed: $95</p>
+          </div>
+        </div>
+        <div class="col-md-6 s-col">
+          <img src="Images/dog ears.jpg" alt="Full Groom" class="s-img">
+        </div>
+      </div>
+
+      <!-- À la carte -->
+      <div class="row g-0 s-row flex-md-row-reverse">
+        <div class="col-md-6 s-col">
+          <div class="s-txt">
+            <h3>À la carte</h3>
+            <p>Various services that can be ordered individually.</p>
+            <p>Nail trimming: $15</p>
+            <p>Nail grinding: $30</p>
+            <p>Ear cleaning: $15</p>
+            <p>Teeth brushing: $10</p>
+          </div>
+        </div>
+        <div class="col-md-6 s-col">
+          <img src="Images/brush teeth.jpg" alt="À la carte" class="s-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+          crossorigin="anonymous"></script>
+  <script>
+     document.addEventListener("DOMContentLoaded", function () {
+        const navbarToggler = document.querySelector(".navbar-toggler");
+        const navbarCollapse = document.querySelector("#navbarNav");
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false
+        });
+
+        navbarToggler.addEventListener("click", () => {
+            bsCollapse.toggle();
+        });
+    });
+  </script>
+ 
+</body>
+</html>

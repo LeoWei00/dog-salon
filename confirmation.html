@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation - GeeGee's Dog Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+          rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1{
+        padding: 50px;
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .confirm-box {
+      border: 2px solid black;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .check-image {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.png" alt="Logo" width="50" height="50">
+        GeeGee's Dog Salon
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="employees.html">Groomers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary ms-2" href="book.html">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Booking is confirmed!</h1>
+    <div class="confirm-box">
+      <p><strong>Confirmation number:</strong> 00000000001</p>
+      <p><strong>Date:</strong> <span id = "bookedDate">YYYY/MM/DD</span></p>
+      <p id = "time"><strong>Time:</strong> <span id = "bookedTime">HH:MM</span> </p>
+      <p id = "service"><strong>Service:</strong> <span id = "bookedService">&lt;Chosen service&gt;</span></p>
+      <p id = "employee"><strong>Employee:</strong> <span id = "bookedEmployee">&lt;Chosen employee&gt;</span></p>
+    </div>
+    <p>You will receive a confirmation email soon!</p>
+    <img src = "Images/confirm.jpg" alt="Booking success" class = "check-image">
+    <div class="btn-container">
+      <a href="index.html" class="btn btn-secondary">Home</a>
+      <a href="book.html" class="btn btn-primary">Book Again</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+          crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbarToggler = document.querySelector(".navbar-toggler");
+      const navbarCollapse = document.querySelector("#navbarNav");
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false
+      });
+
+      navbarToggler.addEventListener("click", () => {
+          bsCollapse.toggle();
+      });
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const date = urlParams.get("date");
+      const time = urlParams.get("time");
+      const service = urlParams.get("service");
+      const employee = urlParams.get("employee");
+
+      document.getElementById("bookedDate").textContent = date || "N/A";
+      document.getElementById("bookedTime").textContent = time || "N/A";
+      document.getElementById("bookedService").textContent = service || "N/A";
+      document.getElementById("bookedEmployee").textContent = employee || "N/A";
+    });
+  </script>
+</body>
+</html>

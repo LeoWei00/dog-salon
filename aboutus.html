@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - GeeGee's Dog Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+          rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+  <style>
+    body {font-family: Arial, sans-serif;}
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      padding-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    .abt-img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .description {
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.png" alt="Logo" width="50" height="50">
+        GeeGee's Dog Salon
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="employees.html">Groomers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary ms-2" href="book.html">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>About Us</h1>
+    <img src="Images/dog team.jpg" alt = "Happy dogs" class = "abt-img">
+    <div class="description">
+      <p>We are a dog grooming salon in Ottawa, and our goal is to provide the best experience for our customers. We don't use cages, and we will adapt, to the best of our ability, to all the needs of different dogs.</p>
+      <p>In order to prioritize your dog's wellbeing and safety, we have made the following policies:</p>
+      <ul>
+        <li>The groomer has the right to conclude the grooming process if the dog becomes extremely anxious or otherwise shows signs of aggression.</li>
+        <li>We will notify you 20 minutes before the conclusion of the grooming process. Please refrain from waiting at the shop. In addition, please pick up your dog within two hours of the notification, or additional charges will be incurred.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+          crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbarToggler = document.querySelector(".navbar-toggler");
+      const navbarCollapse = document.querySelector("#navbarNav");
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false
+      });
+
+      navbarToggler.addEventListener("click", () => {
+          bsCollapse.toggle();
+      });
+    });
+  </script>
+</body>
+</html>

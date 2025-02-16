@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book an appointment - GeeGee's Dog Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+          rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+  <style>
+    body {font-family: Arial, sans-serif;}
+
+    .book-section {
+      padding: 50px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .book-section h1 {
+      text-align: center;
+      font-size: 3rem;
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="Images/logo.png" alt="Logo" width="50" height="50">
+        GeeGee's Dog Salon
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="employees.html">Groomers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacts.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary ms-2" href="book.html">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="book-section">
+    <h1>Book Online</h1>
+    <form action = "" id = "bookForm">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="firstName">First name:</label>
+          <input type="text" class="form-control" id="firstName" placeholder="First name">
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="lastName">Last name:</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="date">Date:</label>
+          <input type="date" class="form-control" id="date">
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="time">Time:</label>
+          <input type="time" class="form-control" id="time">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="petName">Pet name:</label>
+          <input type="text" class="form-control" id="petName" placeholder="Pet name">
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="weight">Weight:</label>
+          <input type="text" class="form-control" id="weight" placeholder="Weight">
+        </div>
+      </div>
+      <div id="serviceSection" class="form-group">
+        <label for="service">Service:</label>
+        <select class="form-control" id="service">
+          <option value="">Select Service</option>
+          <option value="bnb">Bath and Brush</option>
+          <option value="bnt">Bath and Tidy</option>
+          <option value="fg">Full Groom</option>
+          <option value="nt">Nail trimming</option>
+          <option value="ng">Nail grinding</option>
+          <option value="ec">Ear cleaning</option>
+          <option value="tb">Teeth brushing</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="employee">Employee:</label>
+        <select class="form-control" id="employee">
+          <option value="">Select Employee</option>
+          <option value="e1">Sophie</option>
+          <option value="e2">Jake</option>
+          <option value="e3">Kayley</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+          crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbarToggler = document.querySelector(".navbar-toggler");
+      const navbarCollapse = document.querySelector("#navbarNav");
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false
+      });
+
+      navbarToggler.addEventListener("click", () => {
+          bsCollapse.toggle();
+      });
+
+      document.getElementById("bookForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const bookingDate = document.getElementById("date").value;
+        const bookingTime = document.getElementById("time").value;
+        const bookedService = document.getElementById("service").value;
+        const bookedEmployee = document.getElementById("employee").value;
+
+        // Redirect to confirmation page
+        window.location.href = `confirmation.html?date=${encodeURIComponent(bookingDate)}&time=${encodeURIComponent(bookingTime)}&service=${encodeURIComponent(bookedService)}&employee=${encodeURIComponent(bookedEmployee)}`;
+      });
+    });
+  </script>
+  
+</body>
+</html>
